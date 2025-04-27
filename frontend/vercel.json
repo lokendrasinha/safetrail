@@ -3,11 +3,7 @@
   "builds": [
     {
       "src": "package.json",
-      "use": "@vercel/static-build",
-      "config": {
-        "distDir": "build",
-        "framework": "create-react-app"
-      }
+      "use": "@vercel/static-build"
     }
   ],
   "routes": [
@@ -17,8 +13,7 @@
     },
     {
       "src": "/(.*)",
-      "dest": "/$1",
-      "continue": true
+      "dest": "/index.html"
     }
   ]
 }
