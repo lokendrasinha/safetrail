@@ -248,6 +248,10 @@ app.get('/api/health', (req, res) => {
   });
 });
 
+app.get('/', (req, res) => {
+  res.send('🚀 Backend API is running!');
+});
+
 // Error Handling Middleware
 app.use((err, req, res, next) => {
   console.error('Unhandled error:', err);
