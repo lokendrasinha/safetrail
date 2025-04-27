@@ -5,7 +5,7 @@ export const signup = async (userData) => {
     const response = await API.post('/signup', userData);
     return response.data;
   } catch (error) {
-    throw error.response.data;
+    throw error.response?.data || error;
   }
 };
 
@@ -15,19 +15,16 @@ export const login = async (credentials) => {
     return response.data;
   } catch (error) {
     throw new Error(
-      error.response?.data?.message || 
-      'Login failed. Please try again.'
+      error.response?.data?.message || 'Login failed. Please try again.'
     );
   }
 };
 
 export const logout = async () => {
   try {
-    // Call your backend logout endpoint if you have one
     const response = await API.post('/logout');
     return response.data;
   } catch (error) {
-    // Even if the API call fails, we should still clear client-side auth
     console.error('Logout error:', error);
     throw error;
   }
