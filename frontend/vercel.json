@@ -12,7 +12,7 @@
   "routes": [
     {
       "src": "/api/(.*)",
-      "dest": "https://your-backend.vercel.app/api/$1"  # If backend is separate
+      "dest": "https://safetrail-api.vercel.app/api/$1"
     },
     {
       "src": "/(.*)",
