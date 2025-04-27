@@ -2,9 +2,12 @@
   "version": 2,
   "builds": [
     {
-      "src": "vite.config.js",
+      "src": "package.json",
       "use": "@vercel/static-build",
-      "config": { "distDir": "dist" }
+      "config": {
+        "distDir": "build",
+        "framework": "create-react-app"
+      }
     }
   ],
   "routes": [
@@ -14,7 +17,8 @@
     },
     {
       "src": "/(.*)",
-      "dest": "/index.html"
+      "dest": "/$1",
+      "continue": true
     }
   ]
 }
