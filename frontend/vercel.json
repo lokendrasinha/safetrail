@@ -5,22 +5,22 @@
       "src": "package.json",
       "use": "@vercel/static-build",
       "config": {
-        "distDir": "dist"  // Vite builds to "dist" by default
+        "distDir": "dist" 
       }
     }
   ],
   "routes": [
-    // API routes → forward to your backend
+  
     {
       "src": "/api/(.*)",
       "dest": "https://safetrail-api.vercel.app/api/$1"
     },
-    // Static files (JS, CSS, images) → serve from /dist
+
     {
       "src": "/assets/(.*)",
-      "dest": "/dist/assets/$1"  // Matches files in /dist/assets/
+      "dest": "/dist/assets/$1"  
     },
-    // All other routes → serve index.html (React Router handles them)
+    
     {
       "src": "/(.*)",
       "dest": "/dist/index.html"
